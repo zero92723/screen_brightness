@@ -2,10 +2,11 @@ group 'com.aaassseee.screen_brightness_android'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.4.32'
     repositories {
-        google()
-        mavenCentral()
+        maven { url'https://maven.aliyun.com/repository/google'}
+        maven { url'https://maven.aliyun.com/repository/jcenter'}
+        maven { url'http://maven.aliyun.com/nexus/content/groups/public'}
     }
 
     dependencies {
@@ -16,8 +17,9 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        google()
-        mavenCentral()
+        maven { url'https://maven.aliyun.com/repository/google'}
+        maven { url'https://maven.aliyun.com/repository/jcenter'}
+        maven { url'http://maven.aliyun.com/nexus/content/groups/public'}
     }
 }
 
@@ -25,7 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 29
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -46,5 +48,6 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
